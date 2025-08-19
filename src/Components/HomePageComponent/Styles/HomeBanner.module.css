@@ -1,0 +1,65 @@
+.bannerSection {
+  background-image: url("https://k-shop21.netlify.app/static/media/slider_1.c63eb585a8f77a45a127.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+  margin-top: 60px;
+}
+
+
+
+.bannerContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* .textBox {
+  max-width: 500px;
+} */
+
+.subHeading {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #000;
+}
+
+.mainHeading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.shopBtn {
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: #e91e63;
+  border: none;
+}
+
+.shopBtn:hover {
+  background-color: #c2185b;
+}
+@media (max-width:768px) {
+    .bannerSection{
+        background-position:center;
+        background-size: cover;
+        height: 50vh;
+    }
+    .mainHeading{
+        font-size: 2.0rem;
+    }
+    
+}

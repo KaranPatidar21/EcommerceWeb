@@ -1,0 +1,82 @@
+.navbarWrapper {
+    background: #fff;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+}
+
+.customNavbar {
+    background: transparent !important;
+    padding: 10px 0;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: black !important;
+    letter-spacing: 1px;
+
+    span {
+        color: red;
+        font-size: 1.4rem;
+    }
+}
+
+.navMenu {
+    align-items: start;
+}
+
+.navLink {
+    color: black;
+    font-weight: 600;
+    margin: 0 10px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navLink:hover {
+    color:red !important;
+}
+
+.dropdownMenu {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.dropdownMenu .dropdown-item {
+    color: #fff;
+}
+
+.dropdownMenu .dropdown-item:hover {
+    background-color: #4338ca;
+}
+
+/* Cart styling */
+.cartWrapper {
+    position: relative;
+}
+
+.cartLink {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cartIcon {
+    font-size: 1.4rem;
+    color: black;
+}
+
+.cartBadge {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    background-color: #ff4b5c;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}

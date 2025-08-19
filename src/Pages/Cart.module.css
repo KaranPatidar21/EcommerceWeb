@@ -1,0 +1,123 @@
+.cartSection{
+    margin-top: 100px;
+}
+.cartBox {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.cartTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.cartItem {
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.productImg {
+  width: 100%;
+  max-width: 120px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.productTitle {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.productSeller {
+  color: gray;
+  font-size: 14px;
+}
+
+.priceSection {
+  margin: 8px 0;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 8px;
+}
+
+.discount {
+  color: green;
+  font-weight: 500;
+}
+
+.qtySection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.qtySection button {
+  padding: 4px 10px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: #2874f0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.priceBox {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.priceTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.greenText {
+  color: green;
+  font-weight: 500;
+}
+
+.totalRow {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.placeOrderBtn {
+  width: 100%;
+  background: #fb641b;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  margin-top: 15px;
+  cursor: pointer;
+}
