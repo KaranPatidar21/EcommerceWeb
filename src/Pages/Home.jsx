@@ -50,12 +50,10 @@ function Home() {
                 />
                 <div className="card-body">
                   <h5 className={`card-title ${style.productName}`}>
-                    {/* {item.title} */}
-                    Mens Casual Premium
+                    {item.title}
                   </h5>
                   <p className={`card-text ${style.productDescription}`}>
-                    {/* {item.description} */}
-                    Slim-fitting style, contrast raglan long sleeve, three-button henley p
+                    {item.description}
                   </p>
                   <p className={style.productPrice}> Price : ₹{item.price}</p>
                   <div className={style.buttonGroup}>
@@ -63,7 +61,7 @@ function Home() {
                       Add to Cart
                     </button>
                     <button className={`btn ${style.viewBtn}`}
-                      onClick={() => navigate(`/product-details`)}
+                      onClick={() => navigate(`/product-details/${item.id}`)}
                     >
                       View Product
                     </button>

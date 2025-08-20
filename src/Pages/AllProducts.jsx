@@ -3,6 +3,7 @@ import style from "./Styles/AllProducts.module.css";
 import { getAllCategories, getAllProducts, getCategoryWiseProducts, getSingleProduct } from '../api/productsApi';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCategories, setCategoryProducts, setProducts, setSingleProduct } from '../features/products/productsSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -10,9 +11,9 @@ import { setCategories, setCategoryProducts, setProducts, setSingleProduct } fro
 
 
 function AllProducts() {
-    const dispatch = useDispatch()
-
-    const { products } = useSelector((state) => state.products);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const { products } = useSelector((state) => state.products);
   return (
     <div className={style.allProductSection}>
       <div className="container-fluid">
@@ -31,19 +32,17 @@ function AllProducts() {
                 />
                 <div className="card-body">
                   <h5 className={`card-title ${style.productName}`}>
-                    {/* {item.title} */}
-                    Mens Casual Premium
+                    {item.title}
                   </h5>
                   <p className={`card-text ${style.productDescription}`}>
-                    {/* {item.description} */}
-                    Slim-fitting style, contrast raglan long sleeve, three-button henley p
+                    {item.description}
                   </p>
                   <p className={style.productPrice}> Price : ₹{item.price}</p>
                   <div className={style.buttonGroup}>
                     <button className={`btn  ${style.addToCartBtn}`}>
                       Add to Cart
                     </button>
-                    <button className={`btn ${style.viewBtn}`}>
+                    <button className={`btn ${style.viewBtn}`} onClick={() => navigate(`/product-details/${item.id}`)}>
                       View Product
                     </button>
                   </div>

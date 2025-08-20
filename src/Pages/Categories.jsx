@@ -50,7 +50,7 @@ function Categories() {
                     Add to Cart
                   </button>
                   <button className={`btn ${style.viewBtn}`}
-                    onClick={() => navigate(`/product-details`)}
+                    onClick={() => navigate(`/product-details/${item.id}`)}
                   >
                     View Product
                   </button>

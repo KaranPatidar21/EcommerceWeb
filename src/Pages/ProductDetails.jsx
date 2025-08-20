@@ -1,81 +1,71 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Styles/ProductDetails.module.css";
+import { useParams } from "react-router-dom";
+import { setSingleProduct } from "../features/products/productsSlice";
+import { getSingleProduct } from "../api/productsApi";
+import { useDispatch, useSelector } from "react-redux";
 
 function ProductDetails() {
-  // Dummy Products Data
-  const products = [
-    {
-      id: 1,
-      name: "Apple iPhone 14 (128 GB) - Midnight",
-      price: 69999,
-      originalPrice: 79999,
-      discount: "12% off",
-      rating: 4.5,
-      reviews: 2345,
-      description:
-        "The iPhone 14 comes with a stunning design, powerful A15 Bionic chip, and an advanced dual-camera system. Experience next-level performance and battery life.",
-      image: "https://via.placeholder.com/350x400.png?text=iPhone+14",
-    },
-    
-  ];
 
-  // By default first product show
-  const [selectedProduct, setSelectedProduct] = useState(products[0]);
+  const param = useParams()
 
-  return (
-    <section style={{marginTop:"100px"}}>
+  const dispatch = useDispatch()
+  const { singleProduct } = useSelector((state) => state.products);
 
-    
-    <div className="container my-5">
-      <div className={style.viewCartSection}>
-
+  useEffect(() => {
+    async function fetchData() {
+      const single = await getSingleProduct(param.id);
+      dispatch(setSingleProduct(single));
+    }
+    fetchData();
+  }, [dispatch]);
  
-      <div className="row rounded ">
-        {/* Left Section - Product Image */}
-        <div className="col-md-5 d-flex justify-content-center p-4">
-          <div className={style.imageBox}>
-            <img
-              src={selectedProduct.image}
-              alt={selectedProduct.name}
-              className={style.productImg}
-            />
-          </div>
-        </div>
+console.log(singleProduct, ":singleProduct")
+  return (
+    <section style={{ marginTop: "100px" }}>
 
-        {/* Right Section - Product Details */}
-        <div className="col-md-7 p-4">
-          <h3 className={style.productTitle}>{selectedProduct.name}</h3>
 
-          {/* Rating + Reviews */}
-          <div className={style.ratingBox}>
-            <span className={style.rating}>{selectedProduct.rating} ★</span>
-            <span className={style.reviews}>
-              {selectedProduct.reviews} Ratings & Reviews
-            </span>
-          </div>
+      <div className="container my-5">
+        <div className={style.viewCartSection}>
 
-          {/* Price Section */}
-          <div className={style.priceSection}>
-            <span className={style.price}>₹{selectedProduct.price}</span>
-            <span className={style.originalPrice}>
-              ₹{selectedProduct.originalPrice}
-            </span>
-            <span className={style.discount}>{selectedProduct.discount}</span>
-          </div>
 
-          {/* Description */}
-          <p className={style.description}>{selectedProduct.description}</p>
+          <div className="row rounded ">
+            <div className="col-md-5 d-flex justify-content-center p-4">
+              <div className={style.imageBox}>
+                <img
+                  src={singleProduct.image}
+                  alt={singleProduct.title}
+                  className={style.productImg}
+                />
+              </div>
+            </div>
 
-          {/* Buttons */}
-          <div className={style.btnGroup}>
-            <button className={style.addToCartBtn}>ADD TO CART</button>
-            <button className={style.buyNowBtn}>BUY NOW</button>
+            <div className="col-md-7 p-4">
+              <h3 className={style.productTitle}>{singleProduct.title}</h3>
+
+              <div className={style.ratingBox}>
+                <span className={style.rating}>{singleProduct.rating.rate} ★</span>
+                <span className={style.reviews}>
+                  {singleProduct.reviews} Ratings & Reviews
+                </span>
+              </div>
+
+              <div className={style.priceSection}>
+                <span className={style.price}>₹{singleProduct.price}</span>
+              </div>
+              <h5><b>{singleProduct.category}</b></h5>
+
+              <p className={style.description}>{singleProduct.description}</p>
+
+              <div className={style.btnGroup}>
+                <button className={style.addToCartBtn}>ADD TO CART</button>
+                <button className={style.buyNowBtn}>BUY NOW</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-        </div>
-    </div>
-</section>
+    </section>
   );
 }
 
